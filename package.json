@@ -1,18 +1,22 @@
 {
     "name": "schema-transformer",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "",
-    "main": "index.js",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "test": "vitest run",
         "dev": "vitest",
         "build": "tsup src/index.ts --format cjs,esm --dts",
         "lint": "tsc",
-        "ci": "npm run lint && npm run test && npm run build"
+        "ci": "npm run lint && npm run test && npm run build",
+        "publish": "npm run ci && changesets publish"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@changesets/cli": "^2.26.2",
         "@types/node": "^20.5.7",
         "nodemon": "^3.0.1",
         "rimraf": "^5.0.1",
