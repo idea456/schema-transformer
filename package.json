@@ -4,9 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "npx nodemon",
-        "build": "rimraf ./build && tsc"
+        "test": "vitest run",
+        "dev": "vitest",
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "lint": "tsc",
+        "ci": "npm run lint && npm run test && npm run build"
     },
     "author": "",
     "license": "ISC",
@@ -15,7 +17,10 @@
         "nodemon": "^3.0.1",
         "rimraf": "^5.0.1",
         "ts-node": "^10.9.1",
-        "typescript": "^5.2.2"
+        "tsup": "^7.2.0",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.9",
+        "vitest": "^0.34.4"
     },
     "dependencies": {
         "property-expr": "^2.0.5",

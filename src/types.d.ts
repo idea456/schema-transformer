@@ -7,6 +7,7 @@ type NestedKeyOf<ObjectType extends object> = {
         : `${Key}`;
 }[keyof ObjectType & (string | number)];
 
+// TODO: Resolve more cases for Record, Set, Map, etc
 type RecursiveObject<T> = T extends Date
     ? never
     : T extends any[]
