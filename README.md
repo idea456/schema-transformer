@@ -52,6 +52,8 @@ const transformedUser = transformer
 // user.has_logged_out and user.status.is_online types are casted to boolean and values transformed
 user.has_logged_out
 //        ^? has_logged_out: number
+user.status.is_online
+//        ^? has_logged_out: number
 ```
 
 # API reference
