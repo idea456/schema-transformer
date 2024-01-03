@@ -1,9 +1,11 @@
 # Description
-schema-transformer provides a simple utility for transforming data objects according to a specified schema. It allows you to select specific and deeply nested fields within an object and apply transformations to them while preserving unselected field types and casting the types of the selected fields. This is convenient to apply transformations for deeply nested fields, whereby you want to preserve the types of other fields but only cast the type of the field you want to transform.
+`schema-transformer` provides a simple utility for transforming data objects according to a specified schema. It allows you to select specific and deeply nested fields within an object and apply transformations to them while preserving unselected field types and casting the types of the selected fields. 
+
+This is convenient to apply transformations for deeply nested fields, whereby you want to preserve the types of other fields but only cast the type of the field you want to transform.
 
 # Installation
 
-```
+```bash
 npm install schema-transformer
 # or
 yarn add schema-transformer
@@ -11,7 +13,7 @@ yarn add schema-transformer
 
 # Usage
 
-```
+```typescript
 import { Transformer } from 'schema-transformer';
 
 // Define your data schema
