@@ -9,7 +9,7 @@
     "types": "./dist/index.d.ts",
     "scripts": {
         "test": "vitest run",
-        "coverage": "vitest run --coverage",
+        "coverage": "vitest run --coverage.enabled --coverage.reporter='text-summary'",
         "dev": "vitest",
         "build": "tsup src/index.ts --format cjs,esm --dts",
         "lint": "tsc",

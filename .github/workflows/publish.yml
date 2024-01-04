@@ -20,6 +20,19 @@ jobs:
 
             - run: npm run ci
 
+            - run: npm run coverage
+        
+            - name: Create the Badge
+              uses: schneegans/dynamic-badges-action@v1.0.0
+              with:
+                auth: ${{ secrets.GIST_SECRET }}
+                gistID: cae78aa41f0e72f261e01fd2fcee51f4
+                filename: schema-transformer__${{ env.BRANCH }}.json
+                label: Test Coverage
+                message: ${{ env.COVERAGE }}
+                color: green
+                namedLogo: vitest
+
             - name: Create PR
               id: changesets
               uses: changesets/action@v1

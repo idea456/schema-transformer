@@ -1,5 +1,7 @@
 # Description
 [![npm version](https://img.shields.io/npm/v/schema-transformer?style=flat&colorA=18181B&colorB=d8c449)](https://www.npmjs.com/package/sunsettia)
+![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/idea456/cae78aa41f0e72f261e01fd2fcee51f4/raw/schema-transformer__heads_master.json)
+
 
 `schema-transformer` provides a simple utility for transforming data objects according to a specified schema. It allows you to select specific and deeply nested fields within an object and apply transformations to them while preserving unselected field types and casting the types of the selected fields. 
 
