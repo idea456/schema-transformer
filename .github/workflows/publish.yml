@@ -19,14 +19,22 @@ jobs:
 
             - run: npm run ci
 
-            - run: npm run coverage
+            - name: Get Coverage for badge
+              run: |
+                  SUMMARY="$(npm run coverage | tail -2 | head -1)"
+                  TOKENS=($SUMMARY)
+                  echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+
+                  BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+                  echo $BRANCH_NAME
+                  echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         
             - name: Create the Badge
               uses: schneegans/dynamic-badges-action@v1.0.0
               with:
                 auth: ${{ secrets.GIST_SECRET }}
                 gistID: cae78aa41f0e72f261e01fd2fcee51f4
-                filename: schema-transformer__${{ env.BRANCH }}.json
+                filename: schema-transformer.json
                 label: Test Coverage
                 message: ${{ env.COVERAGE }}
                 color: green
