@@ -66,6 +66,13 @@ user.status.is_online
 ### `Transformer(data: unknown)`
 `data (any)`: The data object you want to transform.
 
+### `select<SelectedKeys extends NestedKeyOf<TObject>>(...selectedKeys: SelectedKeys[])`
+Selects specific properties within the object for transformation.
+
+**Parameters**
+
+`selectedKeys`: An array of keys representing the properties to be transformed. The keys can include nested properties.
+
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
